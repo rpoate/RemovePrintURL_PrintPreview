@@ -11,12 +11,12 @@
 
     Private Sub HtmlEditControl1_CommandsToolbarButtonClicked(sender As Object, e As Zoople.CommandsToolbarButtonClickedEventArgs) Handles HtmlEditControl1.CommandsToolbarButtonClicked
 
-        If e.ButtonIdentifier = "tsbPrint" Or e.ButtonIdentifier = "tsbPrintPreview" Then
+        If e.ButtonIdentifier = "tsbPrint" Then
 
             e.Cancelled = True
 
             'set temporary registry values
-            My.Computer.Registry.SetValue(regKey, "header", "")
+            My.Computer.Registry.SetValue(regKey, "header", "The Page &p of &P")
             My.Computer.Registry.SetValue(regKey, "footer", "")
             My.Computer.Registry.SetValue(regKey, "margin_bottom", "0.50000")
             My.Computer.Registry.SetValue(regKey, "margin_left", "0.50000")
